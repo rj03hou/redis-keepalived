@@ -1,6 +1,6 @@
 #!/bin/bash
 REDIS_PORT=$1
-REDIS_BIN_DIR="/usr/local/redis/bin/"
+REDIS_BIN_DIR="/usr/bin/"
 
 log() {
    logger  -id "$*"
