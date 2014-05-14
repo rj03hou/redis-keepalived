@@ -1,12 +1,15 @@
 #!/bin/bash
 
+# first ip
+localip=""
+# second ip
 masterip=""
 
-LOCAL_IP="$(ifconfig bond0 | grep -w inet | awk '{ print $2 }' | awk -F: '{ print $2 }')"
-if [ "${LOCAL_IP}" == "localip" ]; then 
-	REDIS_MASTER_IP="masterip";
-elif [ "${LOCAL_IP}" == "localip" ];then
- 	REDIS_MASTER_IP="masterip"
+LOCAL_IP="$(ifconfig em1 | grep -w inet | awk '{ print $2 }' | awk -F: '{ print $2 }')"
+if [ "${LOCAL_IP}" == "$localip" ]; then 
+	REDIS_MASTER_IP="$masterip";
+elif [ "${LOCAL_IP}" == "$localip" ];then
+ 	REDIS_MASTER_IP="$masterip"
 else
   echo "error"
   exit 1
